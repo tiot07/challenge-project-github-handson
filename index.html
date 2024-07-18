@@ -37,69 +37,11 @@
 <footer></footer>
 <script>
 //じゃんけん用のSCRIPTを書いてください
-
-// function name(num) {
-//   if (num == 0){
-//     return "グー"
-//   }else if (num == 1){
-//     return "チョキ"
-//   }else{
-//     return "パー"
-//   }
-// }
-
-function name(cp) {
-  const hands = ["グー", "チョキ", "パー"];
-  return hands[cp];
-}
-
-// function judge(num, player){
-//   if (player == num){
-//     return "引き分け"
-//   } else if ((player - num + 3 ) % 3 == 2){
-//     return "勝ち"
-//   }else {
-//     return "負け"
-//   }
-// }
-
-function judge(cp, player) {
-  const result = ["引き分け", "負け", "勝ち"];
-  return result[(player - cp + 3) % 3];
-}
-
-// 0 グー, 1 チョキ, 2 パー
-// $("#gu_btn").on("click", function(){
-//   const num = Math.ceil(Math.random() * 3) % 3;
-//   $("#pc_hands").html(name(num));
-//   console.log(num)
-//   $("#judgment").html(judge(num, 0));
-// })
-
-// $("#cho_btn").on("click", function(){
-//   const num = Math.ceil(Math.random() * 3) % 3;
-//   $("#pc_hands").html(name(num));
-//   console.log(num)
-//   $("#judgment").html(judge(num, 1));
-// })
-
-// $("#par_btn").on("click", function(){
-//   const num = Math.ceil(Math.random() * 3) % 3;
-//   $("#pc_hands").html(name(num));
-//   console.log(num)
-//   $("#judgment").html(judge(num, 2));
-// })
-    
 $("ul li").on("click", function() {
-  const playerHand = $(this).index(); // クリックされた手のインデックスを取得 (0: グー, 1: チョキ, 2: パー)
-  const cp = Math.floor(Math.random() * 3); // コンピュータの手をランダムに決定
-  $("#pc_hands").html(name(cp));
-  $("#judgment").html(judge(cp, playerHand));
+  const computerHand = Math.floor(Math.random() * 3); // コンピュータの手をランダムに決定
+  $("#pc_hands").html( ["グー", "チョキ", "パー"][computerHand]);
+  $("#judgment").html( ["引き分け", "負け", "勝ち"][($(this).index() - computerHand + 3) % 3]);
 });
-    
-    
-    
-    
 
 </script>
 </body>
