@@ -27,6 +27,7 @@
   });
 - AWSのS3とCloudFrontを使って外部にページを公開できるようにした
     - +CloudFormationを使ってインフラの設定をIaCで管理する方法でデプロイを行った
+-  ![CloudFormation_img](img/CloudFormation.png)
 - WebページにオブザバビリティプラットフォームのNewRelicを導入し、処理遅延箇所のモニタリングやエラー検知等をできるようにした
 - ![NewRelic_img](img/NewRelic.png)
 - githubを使いながら機密情報を安全な方法で管理できるようにした
